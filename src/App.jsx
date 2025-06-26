@@ -1,32 +1,28 @@
-import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all"
-import Navbar from "./components/Navbar";
-import { useGSAP } from "@gsap/react";
+import gsap from 'gsap';
+import { ScrollTrigger, SplitText } from "gsap/all";
+
+import Navbar from './components/Navbar.jsx'
+import Hero from './components/Hero.jsx'
+import Cocktails from './components/Cocktails.jsx'
+import About from './components/About.jsx'
+import Art from './components/Art.jsx'
+import Menu from './components/Menu.jsx'
+import Contact from './components/Contact.jsx'
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const App = () => {
-  useGSAP(() => {
-    const navTween = gsap.timeline({
-      scrollTrigger: {
-        trigger: 'nav',
-        start: 'bottom top'
-      }
-    })
-
-    navTween.fromTo('nav', { backgroundColor: 'transparent' }, {
-      backgroundColor: '#00000050',
-      backgroundFilter: 'blur(10px)',
-      duration: 1,
-      ease: 'power1.inOut'
-    })
-  })
-
-  return (
-    <main>
-      <Navbar />
-    </main>
-  )
+ return (
+	<main>
+	 <Navbar />
+	 <Hero />
+	 <Cocktails />
+	 <About />
+	 <Art />
+	 <Menu />
+	 <Contact />
+	</main>
+ )
 }
- 
+
 export default App
